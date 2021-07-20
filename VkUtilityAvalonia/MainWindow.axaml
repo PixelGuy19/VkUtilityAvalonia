@@ -1,0 +1,39 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        MinWidth="800" Width="800"
+        xmlns:view="clr-namespace:VkUtilityAvalonia"
+        x:Class="VkUtilityAvalonia.MainWindow"
+        Title="VkUtilityAvalonia"
+        Name="Window">
+  
+  <Window.Styles>
+  </Window.Styles>
+  
+  <WrapPanel>
+    <!--Width="{Binding #Window.DesignWidth}-->
+    <Grid Name="FunctionSelect" MaxWidth="300">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="300"></ColumnDefinition>
+        <ColumnDefinition MinWidth="500" Width="auto"></ColumnDefinition>
+      </Grid.ColumnDefinitions>      
+
+      <Rectangle Grid.Column="0" Fill="#f2f2f2" Height="9999"></Rectangle>
+      <Label Grid.Column="0" FontSize="20" Margin="10">Vk methods</Label>
+      <ListBox Grid.Column="0" Margin="0,50,0,0" HorizontalAlignment="Stretch" SelectedIndex="0">      
+        <ListBoxItem>Get all friends</ListBoxItem>        
+        <ListBoxItem>Get all friends (tree)</ListBoxItem>        
+      </ListBox>
+      <ScrollViewer Grid.Column="1">
+        <WrapPanel Grid.Column="1" Orientation="Vertical" Margin="10">
+          <Label>Text</Label>
+
+          <view:InputField SetText="Text"></view:InputField>
+          
+        </WrapPanel>
+      </ScrollViewer>
+    </Grid>
+  </WrapPanel>
+</Window>
